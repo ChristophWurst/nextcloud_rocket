@@ -1,0 +1,30 @@
+language: php
+sudo: required
+dist: trusty
+php:
+  - 7.1
+
+env:
+  global:
+  - CORE_BRANCH=master
+
+cache:
+  directories:
+  - "$HOME/.npm"
+
+before_install:
+  # Install npm dependencies
+  - npm install
+
+  # Check out Nextcloud server
+  - cd ..
+  - git clone https://github.com/nextcloud/server.git --recursive --depth 1 -b $CORE_BRANCH server
+  - mv rocket server/apps/
+
+before_script:
+  # Working directory for tests should be the app's root directory
+  - cd server/apps/rocket
+
+script:
+  # Run JS tests
+  - ./node_modules/karma/bin/karma start --single-run
