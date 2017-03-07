@@ -14,7 +14,7 @@ module.exports = function (config) {
 			'../../../../core/vendor/backbone/backbone.js',
 			'../../../../core/vendor/handlebars/handlebars.js',
 			'specs/specHelper.js', // Include spec helper before other source/test files
-			{pattern: '../**/*.js', included: true},
+			{pattern: '../**/*.js', included: true}
 		],
 
 		// list of files to exclude
