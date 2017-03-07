@@ -18,37 +18,8 @@
  *
  */
 
-(function(OCA) {
-	'use strict';
+(function(global) {
 
-	OCA.Rocket = OCA.Rocket || {};
+	global.OCA = {};
 
-	/**
-	 * @class OCA.Rocket.App
-	 * @param {Object} options
-	 * @returns {undefined}
-	 */
-	OCA.Rocket.App = function(options) {
-		this.initialize(options);
-	};
-
-	OCA.Rocket.App.prototype = {
-
-		/** @type {OCA.Rocket.Views.RocketView} */
-		_view: undefined,
-
-		/**
-		 * @returns {Object}
-		 */
-		initialize: function() {
-			this._view = new OCA.Rocket.Views.RocketView();
-		},
-
-		/**
-		 * @returns {undefined}
-		 */
-		start: function() {
-			// Start app
-		}
-	};
-})(OCA);
+})(window);

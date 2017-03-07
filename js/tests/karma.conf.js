@@ -13,6 +13,7 @@ module.exports = function (config) {
 			'../../../../core/vendor/underscore/underscore.js',
 			'../../../../core/vendor/backbone/backbone.js',
 			'../../../../core/vendor/handlebars/handlebars.js',
+			'specs/specHelper.js', // Include spec helper before other source/test files
 			{pattern: '../**/*.js', included: true},
 		],
 

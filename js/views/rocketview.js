@@ -41,6 +41,7 @@
 		 */
 		_launch: function() {
 			// Launch your rocket
+			console.info('🚀');
 		}
 	});
 

@@ -18,37 +18,23 @@
  *
  */
 
-(function(OCA) {
-	'use strict';
+describe('Rocket view', function() {
+	var $el,
+		view;
 
-	OCA.Rocket = OCA.Rocket || {};
+	beforeEach(function() {
+		$el = $('<div/>');
+		view = new OCA.Rocket.Views.RocketView({
+			$el: $el
+		});
+	});
 
-	/**
-	 * @class OCA.Rocket.App
-	 * @param {Object} options
-	 * @returns {undefined}
-	 */
-	OCA.Rocket.App = function(options) {
-		this.initialize(options);
-	};
+	it('launches a rocket', function() {
+		spyOn(console, 'info');
 
-	OCA.Rocket.App.prototype = {
+		view._launch(); // Alternative: $el.find('button.launch').click();
 
-		/** @type {OCA.Rocket.Views.RocketView} */
-		_view: undefined,
+		expect(console.info).toHaveBeenCalledWith('🚀');
+	});
 
-		/**
-		 * @returns {Object}
-		 */
-		initialize: function() {
-			this._view = new OCA.Rocket.Views.RocketView();
-		},
-
-		/**
-		 * @returns {undefined}
-		 */
-		start: function() {
-			// Start app
-		}
-	};
-})(OCA);
+});
