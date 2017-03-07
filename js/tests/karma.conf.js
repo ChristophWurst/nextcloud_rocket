@@ -24,14 +24,22 @@ module.exports = function (config) {
 		],
 
 		// preprocess matching files before serving them to the browser
-		preprocessors: {},
+		preprocessors: {
+			'../{*.js,!(tests)/**/*.js}': ['coverage']
+		},
 
 		// test results reporter to use
 		// possible values: 'dots', 'progress'
 		// available reporters: https://npmjs.org/browse/keyword/karma-reporter
 		reporters: [
-			'progress'
+			'progress',
+			'coverage'
 		],
+
+		coverageReporter: {
+			type: 'lcov',
+			dir: '../../coverage'
+		},
 
 		// start these browsers
 		browsers: [
