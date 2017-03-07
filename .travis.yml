@@ -26,3 +26,4 @@ before_script:
 script:
   # Run JS tests
   - ./node_modules/karma/bin/karma start js/tests/karma.conf.js --single-run
+  - cat ./coverage/*/lcov.info | ./node_modules/coveralls/bin/coveralls.js
